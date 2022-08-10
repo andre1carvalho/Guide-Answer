@@ -1,6 +1,23 @@
 <%- include ('partials/header.ejs') %>
 <body>
         <%- include('partials/navbar.ejs') %> 
-    <h1>Estilo bootstrap</h1>
+    
+        <div class="container"> 
+            <hr>
+            <h1> Questions </h1>
+            <a href="/questions" class="btn btn-primary">Add question</a>
+            <hr>
+                <% questions.forEach(question => { %>
+                    <br>
+                    <div class="card">
+                        <div class="card-body">
+                            <h4><%= question.title %></h4>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-primary">Reply</button>
+                        </div>
+                    </div>                  
+                <% }); %>
+        </div>
 </body>
 <%- include ('partials/footer.ejs') %>  
