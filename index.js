@@ -65,6 +65,18 @@ app.get("/question/:id", (req,res) =>{
 });
 })
 
+app.post("/answer",(req, res)=>{
+    var corpo = req.body.corpo;
+    var questionid = req.body.questionid;
+    Answer.create({
+        corpo: corpo,
+        questionid: questionid,
+    }).then(() => {
+        res.redirect("/question/"+questionid);
+    });
+});
+
+
 app.listen(8080,function(erro){
     if(erro){
         console.log("ocorreu um erro!");       

@@ -6,10 +6,11 @@
            <h1><%= question.title %></h1>  
            <p><%= question.description %></p>
            <hr>
-           <form>
+           <form method="POST" action="/answer">
                 <h3>Answer</h3>
                 <label>Add a answer...</label>
                 <textarea placeholder="Type your answer here" class ="form-control" name="body"></textarea>
+                <hr>
                 <input type="hidden" name="Question" value="<%= question.id %>">
                 <button type="submit" class="btn btn-primary">Reply</button>
            </form>
